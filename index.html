@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Quiz2</title>
+
+      <style>
+
+         body {
+            background-image: url(https://pbs.twimg.com/media/GQzExWHbkAAsWd3?format=jpg&name=4096x4096);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .head {
+            text-align: center;
+            font-weight: 700;
+            font-family: Lobster;
+            text-shadow: 0px 0px 6px rgba(0, 0, 0, .3);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+            background-color: #F7CFD8;
+            padding-block: 4px;
+            color: white;
+        }
+
+        .con {
+            text-align: center;
+            font-weight: 700;
+            font-family: Lobster;
+            text-shadow: 0px 0px 4px rgba(0, 0, 0, .1);
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, .3);
+            background-color: #F7CFD8;
+            color: white;
+            padding-bottom: 40px;
+            padding-top: 5px;
+        }
+
+        .info, summary{
+            text-align: center;
+            font-weight: 700;
+            font-family: Lobster;
+            text-shadow: 0px 0px 6px rgba(0, 0, 0, .3);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+            background-color: #F7CFD8;
+            padding-block: 4px;
+            color: white;
+        }
+
+        .ticket-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .ticket {
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+        }
+
+
+        .ending {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <br>
+    
+    <div class="head">
+        <h1>Get your ticket now for Grand BiniVerse!!</h1>
+    </div>
+    <br>
+
+    <details>
+        <summary>Personal Information</summary>
+        <i id="Show"></i>
+        <br>
+  
+        <div class="info"> 
+            <form onsubmit="showAlert()">
+                <label>Enter your full name:</label>
+                <input type="text" id="fullname" class="form-control">
+                <label>Enter your Gmail:</label>
+                <input type="email" id="gmail" class="form-control">
+                <br> 
+
+                <button type="submit" class="btn btn-info" onclick="showAlert()">Submit Information</button>
+            </form>
+        </div>
+    </details>
+
+    <script>
+        function showAlert() { 
+            var name = document.getElementById("fullname").value;
+                window.alert("Thank you " + name + " for filling this up. Please proceed to the next step.");
+                return;
+        }
+    </script>
+    <br><br>
+
+    <details>
+        <summary>Ticket Price</summary>
+        <i id="Show"></i>
+        <br>
+  
+        <div class="info"> 
+            <form onsubmit="showAlert()">
+            </form>
+            <br>
+    <label>Choose your seat</label><br>
+    <select class="form-select" id="show">
+        <option value="none"></option>
+        <option value="20000">VIP</option>
+        <option value="15000">SVIP</option>
+        <option value="10000">SSVIP</option>
+        <option value="5000">Upper Box</option>
+        <option value="3500">Lower Box</option>
+    </select>
+    <br>
+     
+     <label>Choose an option</label>
+     <select class="form-select" id="showtoo">
+        <option value="none"></option>
+        <option value=".8">Student</option>
+        <option value=".8">PWD</option>
+        <option value="1">Regular</option>
+        <option value=".8">Adult</option>
+    </select>
+    <br>
+
+
+                <button type="submit" class="btn btn-info" onclick="TicketPrice()">  Submit Ticket Price</button>
+            </form>
+        </div>
+    </details>
+
+    <script>
+        function TicketPrice(){ 
+            var Seats = document.getElementById("show").value;
+            var Dis_count = document.getElementById("showtoo").value;
+            var Ticket_price = Seats * Dis_count;
+                window.alert(" Here is your total " + Ticket_price + " Please proceed to the next step.");
+        }
+    </script>
+    <br><br>
+
+    <details>
+        <summary>Print Ticket</summary>
+        <br>
+
+        <div class="info">
+        <div class="ticket-container">
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/026/995/062/small/ticket-valentine-3d-illustration-png.png" alt="Ticket Image" width="200px">
+    <br>
+
+       </div>
+        <br><br>
+
+        <button class="btn btn-danger " onclick="printTicket()">Print Ticket</button>
+        <br><br>
+
+        <button class="btn btn-primary " onclick="location.reload()">Buy more tickets</button>
+    </div>
+
+    <div class="ending">
+        Ashlei Reodica
+    </div>
+
+    </script>
+
+
+</body>
+</html>
